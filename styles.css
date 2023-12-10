@@ -7,8 +7,7 @@
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
+small, strike, strong, sub, sup, tt, var, u, i, center,
 dl, dt, dd, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
@@ -60,18 +59,127 @@ body {
 
 /* Nav */
 
+
+
 nav {
     grid-area: nav;
+    background-color: #ffffff;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+   
 }
 
 nav li {
     list-style-type: none;
-    margin: 5px;
 }
 
 nav a {
     text-decoration: none;
+    display: block;
+    font-family: 'Bebas Neue', sans-serif;
+    color: #eb5428;
 }
+
+ul img {
+    width: 10%;
+    padding-top: 10px;
+    padding-right: 10px;
+}
+
+[href="#home"] {
+    display: grid;
+    grid-column: 2/3;
+    position: absolute;
+    padding: 37px 80px;
+    left: 25%;
+    top: 0;
+    background-color: #eb5428;
+    z-index: 1;
+}
+
+.avatar {
+    grid-column: 3;
+    font-family: 'Bebas Neue', sans-serif;
+    width: 100%;
+    margin-top: 30px;
+    margin-left: 65px;
+
+}
+
+.avatar svg{
+    display: block; 
+    padding-left: 10px;   
+}
+
+   
+nav ul {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+
+label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+}
+
+label span {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    margin-left: 3px;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background-color .2s ease-out;
+    width: 18px;
+}
+
+#dropdown {
+    display: none;
+}
+
+input:checked ~ ul {
+    max-height: 500px;
+}
+
+input:checked ~ label span {
+    background: transparent;
+}
+
+input:checked ~ label span:before {
+    transform: rotate(-45deg);
+}
+
+input:checked ~ label span:after {
+    transform: rotate(45deg);
+}
+input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
+    top: 0;
+}
+ /* Search bar */ 
+ 
+ .search-bar {
+    display: block;
+ }
+ .search {
+    position: absolute;
+    border: 3px solid #eb5428;
+    height: 40px;
+    top: 180px;
+    left: 30%;
+ }
+
+ button {
+    position: absolute;
+    top: 180px;
+    left: 60%;
+    background-color: #eb5428;
+    border: 2px solid #eb5428;
+    
+ }
 
 /* Main Section */
 main {
@@ -82,8 +190,11 @@ h1 {
     font-size: 40px;
     font-family: 'Bebas Neue', sans-serif;
     text-align: center;
+    margin-bottom: 30px;
+    margin-top: 130px;
 }
 
+/* Menu Icons */
 menu {
     display: flex;
 }
@@ -98,8 +209,18 @@ menu li {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 20px;
     color: #eb5428;
+    line-height: 30px;
  }
- 
+
+ menu span {
+    padding-left: 4px;
+ }
+ menu svg {
+    display: block;
+ }
+ .justify {
+    padding-left: 30px;
+ }
  .street-taco {
     width: 100%;
  }
@@ -107,6 +228,7 @@ menu li {
  p {
     font-size: 16px;
     margin: 10px;
+    line-height: 25px;
  }
 
 
@@ -120,7 +242,20 @@ menu li {
  /* Details */
 
 dt {
+    margin-left: 10px;
     margin-bottom: 10px;
+}
+
+b {
+    padding-right: 10px;
+}
+
+/* Directions */
+
+#directions li{
+    margin-bottom: 20px;
+    margin-top: 5px;
+    line-height: 25px;
 }
 
 /* Ingredients */
@@ -135,40 +270,189 @@ dt {
     background-color: #7abfbf;
 }
 
+#dish h2 {
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
+
+figure {
+    display: flex;
+    margin-bottom: 40px;
+    margin-left: 15px;
+}
 h3 {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 25px;
-}
-figure {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    position: relative;
-}
-
-.dish-img {
-   grid-column: 1/2;
-   width: 40%;
-   margin-left: 20px;
-}
-h3 {
-    grid-column: 2/2;
-    margin-top: 10px;
+    margin-left: 15px;
 }
 
 figcaption {
-    display: block;
-    position: relative;
+    margin-left: 15px;
+}
+
+#dish p {
+    margin-left: 15px;
+    font-weight: bold;
+}
+.dish-img {
+   max-width: 100px;
+}
+
+.dish-img:last-of-type {
+    margin-bottom: 15px;
 }
 
 .stars {
-    grid-column: 2/2;
-    display: flex;
-    margin-bottom: 20px;
-    
+    margin-left: 15px;
 }
 
+.stars svg {
+    padding-right: 15px;
+    
+}
+ß
 /* Footer */
-
 footer {
     grid-area: footer;
+}
+
+.menu-bttm svg {
+    padding-left: 13px;
+}
+
+footer img {
+    margin: 30px auto;
+    display: block;
+    width: 50%;
+}
+
+footer p {
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+}
+
+@media screen and (min-width: 768px) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+   .hamburger-menu {
+    display: inline-block;
+   }
+    nav ul {
+        overflow: visible;
+        max-height: fit-content;
+        display: flex;
+        padding-left: 50px;
+    }
+
+    ul img {
+        width: 30%;
+    }
+
+    .avatar {
+
+    }
+
+    [href="#home"] {
+        position: relative;
+        left: 0;
+        padding: 0;
+    }
+
+    #top {
+        grid-column: 1/ span 2;
+    }
+
+    h1 {
+        text-align: left;
+        margin-left: 20px;
+    }
+
+    label {
+        display: none;
+        height: 0px;
+        width: 0px;
+    }
+
+    #top menu {
+        position: absolute;
+        width: 100%;
+        padding-top: 20px;
+        background:rgba(255, 255, 255, .7);
+    }
+
+    #details {
+        grid-column: 1/ span 2;
+        text-align: center;
+    }
+
+
+    #ingredients {
+        grid-column: 1/2;
+    }
+
+    #ingredients ul {
+        line-height: 30px;
+    }
+
+    #directions {
+        grid-column: 2/2;
+    }
+
+    #dish {
+      grid-column: 1/ span 2;
+    }
+
+    .dish-container {
+        display:flex;
+    }
+
+    footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 25px;
+    }
+
+    .menu-bttm {
+        grid-column: 2/2;
+    }
+    footer img {
+        grid-column: 1/2;
+        grid-row: 1/3;
+    }
+    footer p {
+        grid-column: 1/2;
+    }
+}
+
+
+@media screen and (min-width:1280px) {
+
+    #details {
+        background-color: #0d0d0d;
+        color: #7abfbf;
+    }
+    #details dt {
+        display: flex;
+    }
+figure {
+    display: flex;
+}
+
+footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.menu-bttm {
+    grid-column: 3;
+}
+footer img {
+    grid-column: 1;
+}
+footer p {
+    grid-column: 2
 }
