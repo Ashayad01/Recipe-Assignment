@@ -52,6 +52,7 @@ body {
     display: grid;
     grid-template-areas: 
     "nav"
+    "header"
     "main"
     "footer";
     grid-template-columns: 1fr;
@@ -192,6 +193,12 @@ h1 {
     text-align: center;
     margin-bottom: 30px;
     margin-top: 130px;
+}
+
+/* Header */
+
+header {
+    grid-area: header;
 }
 
 /* Menu Icons */
@@ -431,24 +438,30 @@ footer p {
 
 @media screen and (min-width:1280px) {
 
-#top {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+.top-content {
+    display:flex;
 }
 
 #top h1 {
-    margin: 0 auto;
+    text-align: center;
 }
 #top img {
-    grid-column: 2;
+    grid-column: 1/ span 2;
+    width: 50%;
 }
 
 #top menu {
     grid-column: 1;
-    position: relative;
     display: block;
-    background-color: none;
-    padding-left:20px;
+    position: relative;
+    background: #ffffff;
+   width: fit-content;
+
+}
+
+#top li {
+    padding-bottom: 30px;
+    padding-left: 50px;
 }
 
 #top p {
