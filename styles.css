@@ -310,7 +310,7 @@ figcaption {
     padding-right: 15px;
     
 }
-ß
+
 /* Footer */
 footer {
     grid-area: footer;
@@ -431,11 +431,37 @@ footer p {
 
 @media screen and (min-width:1280px) {
 
+#top {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+#top h1 {
+    margin: 0 auto;
+}
+#top img {
+    grid-column: 2;
+}
+
+#top menu {
+    grid-column: 1;
+    position: relative;
+    display: block;
+    background-color: none;
+    padding-left:20px;
+}
+
+#top p {
+    grid-column: 3/span 4;
+    height:
+    
+}
+
     #details {
         background-color: #0d0d0d;
         color: #7abfbf;
     }
-    #details dt {
+    #details  {
         display: flex;
     }
 figure {
@@ -455,4 +481,6 @@ footer img {
 }
 footer p {
     grid-column: 2
+}
+
 }
