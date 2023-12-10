@@ -466,21 +466,25 @@ small {
     padding-left: 50px;
 }
 
-#top p {
-    grid-column: 3/span 4;
-    height:
-    
+main {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-    #details {
-        background-color: #0d0d0d;
-        color: #7abfbf;
-    }
-    #details  {
-        display: flex;
-    }
-figure {
-    display: flex;
+#details {
+    grid-column: 1/ span 4;
+    background-color: #0d0d0d;
+    color: #7abfbf;
+}
+
+#ingredients {
+    grid-column: 1;
+}
+#directions {
+    grid-column: 2 / span 4;
+}
+
+#dish {
+    grid-column: 1/span 4;
 }
 
 footer {
