@@ -456,7 +456,13 @@ footer p {
     position: relative;
     background: #ffffff;
    width: fit-content;
+   border: 2px solid #eb5428;
+   padding-right: 20px;
 
+}
+
+[href="#jump"] {
+    padding-right: 10px;
 }
 
 #top li {
